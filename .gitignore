@@ -1,2 +1,3 @@
 clusterconfig_*
 *.kubeconfig
+SECRETS.md
