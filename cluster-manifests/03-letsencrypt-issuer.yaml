@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    # IMPORTANT: You must change this email address to your own.
+    # It is used for ACME account registration and expiry notifications.
+    email: info@divizend.ai
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      # This secret will be created automatically by cert-manager
+      name: letsencrypt-prod-account-key
+    solvers:
+      # This configures cert-manager to solve certificate challenges
+      # using the NGINX ingress controller we installed.
+      - http01:
+          ingress:
+            class: nginx
