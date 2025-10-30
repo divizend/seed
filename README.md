@@ -6,7 +6,6 @@ It is fully idempotent, meaning it can be run multiple times without causing err
 
 ## To Do
 
-- [ ] Fix that the script stays stuck at `Waiting for all nodes to become Ready... [0/3]`. Potential solution: Because the kube API server is only listening on the local network, we need to add a load balancer in front of it. `bind-address: 0.0.0.0` doesn't seem to work.
 - [ ] Add the best, most universally accepted control panel(s) (kube-prometheus-stack? ArgoCD? others? -> research)
 - [ ] Add k8s MCP server, deploy LibreChat and connect the two.
 
